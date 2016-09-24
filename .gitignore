@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/visualstudiocode,node,windows
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -71,3 +71,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# Typings
+typings
+dist
