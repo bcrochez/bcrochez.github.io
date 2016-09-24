@@ -52,7 +52,7 @@
 	var Home_1 = __webpack_require__(68);
 	var ExperienceList_1 = __webpack_require__(69);
 	var SkillList_1 = __webpack_require__(70);
-	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, 
+	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
 	    React.createElement(react_router_1.Route, {path: "/", component: Resume_1.Resume}, 
 	        React.createElement(react_router_1.IndexRoute, {component: Home_1.Home}), 
 	        React.createElement(react_router_1.Route, {path: "/Experiencies", component: ExperienceList_1.ExperienceList}), 

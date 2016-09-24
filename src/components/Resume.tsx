@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Router, Route, IndexRoute, hashHistory, Link } from "react-router";
+import { Link } from "react-router";
 
 export interface ResumeProps { }
 
