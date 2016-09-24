@@ -49,12 +49,11 @@
 	var ReactDOM = __webpack_require__(2);
 	var react_router_1 = __webpack_require__(3);
 	var Resume_1 = __webpack_require__(67);
-	var Home_1 = __webpack_require__(68);
-	var ExperienceList_1 = __webpack_require__(69);
-	var SkillList_1 = __webpack_require__(70);
-	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
+	var ExperienceList_1 = __webpack_require__(68);
+	var SkillList_1 = __webpack_require__(69);
+	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, 
 	    React.createElement(react_router_1.Route, {path: "/", component: Resume_1.Resume}, 
-	        React.createElement(react_router_1.IndexRoute, {component: Home_1.Home}), 
+	        React.createElement(react_router_1.IndexRoute, {component: ExperienceList_1.ExperienceList}), 
 	        React.createElement(react_router_1.Route, {path: "/Experiencies", component: ExperienceList_1.ExperienceList}), 
 	        React.createElement(react_router_1.Route, {path: "/Skills", component: SkillList_1.SkillList}))
 	)), document.getElementById("main"));
@@ -5932,6 +5931,15 @@
 	            React.createElement(react_router_1.Link, {to: "/"}, 
 	                React.createElement("h1", null, "Resume")
 	            ), 
+	            React.createElement("div", {class: "menu"}, 
+	                React.createElement("ul", null, 
+	                    React.createElement("li", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Experiencies"}, "Experiencies")
+	                    ), 
+	                    React.createElement("li", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Skills"}, "Skills")
+	                    ))
+	            ), 
 	            React.createElement("main", null, this.props.children)));
 	    };
 	    return Resume;
@@ -5941,37 +5949,6 @@
 
 /***/ },
 /* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(1);
-	var react_router_1 = __webpack_require__(3);
-	var Home = (function (_super) {
-	    __extends(Home, _super);
-	    function Home() {
-	        _super.apply(this, arguments);
-	    }
-	    Home.prototype.render = function () {
-	        return (React.createElement("div", null, 
-	            React.createElement(react_router_1.Link, {to: "/Experiencies"}, 
-	                React.createElement("h2", null, "Experiencies")
-	            ), 
-	            React.createElement(react_router_1.Link, {to: "/Skills"}, 
-	                React.createElement("h2", null, "Skills")
-	            )));
-	    };
-	    return Home;
-	}(React.Component));
-	exports.Home = Home;
-
-
-/***/ },
-/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6000,7 +5977,7 @@
 
 
 /***/ },
-/* 70 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
