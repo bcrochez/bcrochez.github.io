@@ -11,7 +11,7 @@ export class ExperienceList extends React.Component<ExperienceListProps, Experie
     return (
       <div className="experience">
         <Link to="/Resume/Experience"><h3>Experience</h3></Link>
-        My experiencies
+        My experience
       </div>
     );
   }

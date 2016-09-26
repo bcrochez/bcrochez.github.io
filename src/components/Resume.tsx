@@ -13,6 +13,7 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
         <Link to="/Resume"><h1>Resume</h1></Link>
         <div class="menu">
             <ul>
+                <li><Link to="/Resume/Cursus">Cursus</Link></li>
                 <li><Link to="/Resume/Experience">Experience</Link></li>
                 <li><Link to="/Resume/Skills">Skills</Link></li>
             </ul>

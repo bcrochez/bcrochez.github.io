@@ -48,15 +48,18 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
 	var react_router_1 = __webpack_require__(3);
-	var Resume_1 = __webpack_require__(67);
-	var ExperienceList_1 = __webpack_require__(68);
-	var SkillList_1 = __webpack_require__(69);
+	var Home_1 = __webpack_require__(67);
+	var Resume_1 = __webpack_require__(68);
+	var CursusList_1 = __webpack_require__(69);
+	var ExperienceList_1 = __webpack_require__(70);
+	var SkillList_1 = __webpack_require__(71);
 	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
+	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}), 
 	    React.createElement(react_router_1.Route, {path: "/Resume", component: Resume_1.Resume}, 
-	        React.createElement(react_router_1.IndexRoute, {component: ExperienceList_1.ExperienceList}), 
+	        React.createElement(react_router_1.IndexRoute, {component: CursusList_1.CursusList}), 
+	        React.createElement(react_router_1.Route, {path: "/Resume/Cursus", component: CursusList_1.CursusList}), 
 	        React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList}))
-	)), document.getElementById("main"));
+	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList})))), document.getElementById("main"));
 
 
 /***/ },
@@ -5921,6 +5924,35 @@
 	};
 	var React = __webpack_require__(1);
 	var react_router_1 = __webpack_require__(3);
+	var Home = (function (_super) {
+	    __extends(Home, _super);
+	    function Home() {
+	        _super.apply(this, arguments);
+	    }
+	    Home.prototype.render = function () {
+	        return (React.createElement("div", {className: "home"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume"}, 
+	                React.createElement("h2", null, "Resume")
+	            )
+	        ));
+	    };
+	    return Home;
+	}(React.Component));
+	exports.Home = Home;
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var react_router_1 = __webpack_require__(3);
 	var Resume = (function (_super) {
 	    __extends(Resume, _super);
 	    function Resume() {
@@ -5933,6 +5965,9 @@
 	            ), 
 	            React.createElement("div", {class: "menu"}, 
 	                React.createElement("ul", null, 
+	                    React.createElement("li", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, "Cursus")
+	                    ), 
 	                    React.createElement("li", null, 
 	                        React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, "Experience")
 	                    ), 
@@ -5948,7 +5983,36 @@
 
 
 /***/ },
-/* 68 */
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var react_router_1 = __webpack_require__(3);
+	var CursusList = (function (_super) {
+	    __extends(CursusList, _super);
+	    function CursusList() {
+	        _super.apply(this, arguments);
+	    }
+	    CursusList.prototype.render = function () {
+	        return (React.createElement("div", {className: "cursus"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, 
+	                React.createElement("h3", null, "Cursus")
+	            ), 
+	            "My cursus"));
+	    };
+	    return CursusList;
+	}(React.Component));
+	exports.CursusList = CursusList;
+
+
+/***/ },
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5969,7 +6033,7 @@
 	            React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
 	                React.createElement("h3", null, "Experience")
 	            ), 
-	            "My experiencies"));
+	            "My experience"));
 	    };
 	    return ExperienceList;
 	}(React.Component));
@@ -5977,7 +6041,7 @@
 
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
