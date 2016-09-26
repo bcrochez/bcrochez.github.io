@@ -51,11 +51,11 @@
 	var Resume_1 = __webpack_require__(67);
 	var ExperienceList_1 = __webpack_require__(68);
 	var SkillList_1 = __webpack_require__(69);
-	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, 
-	    React.createElement(react_router_1.Route, {path: "/", component: Resume_1.Resume}, 
+	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
+	    React.createElement(react_router_1.Route, {path: "/Resume", component: Resume_1.Resume}, 
 	        React.createElement(react_router_1.IndexRoute, {component: ExperienceList_1.ExperienceList}), 
-	        React.createElement(react_router_1.Route, {path: "/Experiencies", component: ExperienceList_1.ExperienceList}), 
-	        React.createElement(react_router_1.Route, {path: "/Skills", component: SkillList_1.SkillList}))
+	        React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
+	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList}))
 	)), document.getElementById("main"));
 
 
@@ -5928,16 +5928,16 @@
 	    }
 	    Resume.prototype.render = function () {
 	        return (React.createElement("div", {className: "app"}, 
-	            React.createElement(react_router_1.Link, {to: "/"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume"}, 
 	                React.createElement("h1", null, "Resume")
 	            ), 
 	            React.createElement("div", {class: "menu"}, 
 	                React.createElement("ul", null, 
 	                    React.createElement("li", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Experiencies"}, "Experiencies")
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, "Experience")
 	                    ), 
 	                    React.createElement("li", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Skills"}, "Skills")
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, "Skills")
 	                    ))
 	            ), 
 	            React.createElement("main", null, this.props.children)));
@@ -5965,9 +5965,9 @@
 	        _super.apply(this, arguments);
 	    }
 	    ExperienceList.prototype.render = function () {
-	        return (React.createElement("div", {className: "experiencies"}, 
-	            React.createElement(react_router_1.Link, {to: "/Experiencies"}, 
-	                React.createElement("h3", null, "Experiencies")
+	        return (React.createElement("div", {className: "experience"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
+	                React.createElement("h3", null, "Experience")
 	            ), 
 	            "My experiencies"));
 	    };
@@ -5995,7 +5995,7 @@
 	    }
 	    SkillList.prototype.render = function () {
 	        return (React.createElement("div", {className: "skills"}, 
-	            React.createElement(react_router_1.Link, {to: "/Skills"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, 
 	                React.createElement("h3", null, "Skills")
 	            ), 
 	            "My skills"));

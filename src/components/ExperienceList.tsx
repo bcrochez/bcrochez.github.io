@@ -9,8 +9,8 @@ export class ExperienceList extends React.Component<ExperienceListProps, Experie
 
   render() {
     return (
-      <div className="experiencies">
-        <Link to="/Experiencies"><h3>Experiencies</h3></Link>
+      <div className="experience">
+        <Link to="/Resume/Experience"><h3>Experience</h3></Link>
         My experiencies
       </div>
     );
