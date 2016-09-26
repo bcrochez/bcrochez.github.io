@@ -7,6 +7,7 @@ import { Resume } from "./components/Resume";
 import { CursusList } from "./components/CursusList";
 import { ExperienceList } from "./components/ExperienceList";
 import { SkillList } from "./components/SkillList";
+import { ProjectList } from "./components/ProjectList";
 
 ReactDOM.render((
     <Router history={browserHistory}>
@@ -16,6 +17,7 @@ ReactDOM.render((
             <Route path="/Resume/Cursus" component={CursusList} />
             <Route path="/Resume/Experience" component={ExperienceList} />
             <Route path="/Resume/Skills" component={SkillList} />
+            <Route path="/Resume/Projects" component={ProjectList} />
         </Route>
     </Router>
     ), document.getElementById("main")

@@ -53,13 +53,15 @@
 	var CursusList_1 = __webpack_require__(69);
 	var ExperienceList_1 = __webpack_require__(70);
 	var SkillList_1 = __webpack_require__(71);
+	var ProjectList_1 = __webpack_require__(72);
 	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
 	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}), 
 	    React.createElement(react_router_1.Route, {path: "/Resume", component: Resume_1.Resume}, 
 	        React.createElement(react_router_1.IndexRoute, {component: CursusList_1.CursusList}), 
 	        React.createElement(react_router_1.Route, {path: "/Resume/Cursus", component: CursusList_1.CursusList}), 
 	        React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList})))), document.getElementById("main"));
+	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList}), 
+	        React.createElement(react_router_1.Route, {path: "/Resume/Projects", component: ProjectList_1.ProjectList})))), document.getElementById("main"));
 
 
 /***/ },
@@ -5958,22 +5960,36 @@
 	    function Resume() {
 	        _super.apply(this, arguments);
 	    }
+	    Resume.prototype.getDefaultProps = function () {
+	        return { tabs: ["Cursus", "Experience", "Skills", "Projects"] };
+	    };
+	    Resume.prototype.getInitialState = function () {
+	        return { currentTab: "Cursus" };
+	    };
+	    Resume.prototype.handleOnClickTab = function (tabName) {
+	        this.setState({ currentTab: tabName });
+	    };
 	    Resume.prototype.render = function () {
 	        return (React.createElement("div", {className: "app"}, 
 	            React.createElement(react_router_1.Link, {to: "/Resume"}, 
 	                React.createElement("h1", null, "Resume")
 	            ), 
 	            React.createElement("div", {class: "menu"}, 
-	                React.createElement("ul", null, 
-	                    React.createElement("li", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, "Cursus")
-	                    ), 
-	                    React.createElement("li", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, "Experience")
-	                    ), 
-	                    React.createElement("li", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, "Skills")
-	                    ))
+	                React.createElement("table", null, 
+	                    React.createElement("tr", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, 
+	                            React.createElement("th", null, "Cursus")
+	                        ), 
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
+	                            React.createElement("th", null, "Experience")
+	                        ), 
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, 
+	                            React.createElement("th", null, "Skills")
+	                        ), 
+	                        React.createElement(react_router_1.Link, {to: "/Resume/Projects"}, 
+	                            React.createElement("th", null, "Projects")
+	                        ))
+	                )
 	            ), 
 	            React.createElement("main", null, this.props.children)));
 	    };
@@ -6004,7 +6020,22 @@
 	            React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, 
 	                React.createElement("h3", null, "Cursus")
 	            ), 
-	            "My cursus"));
+	            React.createElement("ul", null, 
+	                React.createElement("li", null, 
+	                    "2016 - ", 
+	                    React.createElement("strong", null, "Master Logiciel"), 
+	                    " à l'Université Paris-Est Marne-la-Vallée (U-PEM) - ", 
+	                    React.createElement("i", null, "Mention Bien")), 
+	                React.createElement("li", null, 
+	                    "2014 - ", 
+	                    React.createElement("strong", null, "Licence Informatique"), 
+	                    " à l'U-PEM - ", 
+	                    React.createElement("i", null, "Mention Assez Bien")), 
+	                React.createElement("li", null, 
+	                    "2010 - ", 
+	                    React.createElement("strong", null, "Baccalauréat Scientifique"), 
+	                    " - ", 
+	                    React.createElement("i", null, "Mention Assez Bien")))));
 	    };
 	    return CursusList;
 	}(React.Component));
@@ -6033,7 +6064,17 @@
 	            React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
 	                React.createElement("h3", null, "Experience")
 	            ), 
-	            "My experience"));
+	            React.createElement("ul", null, 
+	                React.createElement("li", null, 
+	                    "2016 - Internship in the Laboratoire d'Informatique Gaspard Monge (LIGM) - Probabilist real-time system scheduling ", 
+	                    React.createElement("br", null), 
+	                    " ", 
+	                    React.createElement("i", null, "Implementation of scheduling algorithms into a real-time simulator in Pyhton")), 
+	                React.createElement("li", null, 
+	                    "2015 - Internship in CDIP - Mobile device applications developpement ", 
+	                    React.createElement("br", null), 
+	                    " ", 
+	                    React.createElement("i", null, "Implementation of mini-games in JavaScript and native Android applications")))));
 	    };
 	    return ExperienceList;
 	}(React.Component));
@@ -6067,6 +6108,35 @@
 	    return SkillList;
 	}(React.Component));
 	exports.SkillList = SkillList;
+
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var react_router_1 = __webpack_require__(3);
+	var ProjectList = (function (_super) {
+	    __extends(ProjectList, _super);
+	    function ProjectList() {
+	        _super.apply(this, arguments);
+	    }
+	    ProjectList.prototype.render = function () {
+	        return (React.createElement("div", {className: "projects"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume/Projects"}, 
+	                React.createElement("h3", null, "Projects")
+	            ), 
+	            "My projects"));
+	    };
+	    return ProjectList;
+	}(React.Component));
+	exports.ProjectList = ProjectList;
 
 
 /***/ }
