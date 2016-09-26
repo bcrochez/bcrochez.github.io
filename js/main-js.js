@@ -5957,41 +5957,42 @@
 	var react_router_1 = __webpack_require__(3);
 	var Resume = (function (_super) {
 	    __extends(Resume, _super);
-	    function Resume() {
-	        _super.apply(this, arguments);
+	    function Resume(props, context) {
+	        _super.call(this, props, context);
+	        this.state = { currentTab: "Cursus", tabs: ["Cursus", "Experience", "Skills", "Projects"] };
 	    }
-	    Resume.prototype.getDefaultProps = function () {
-	        return { tabs: ["Cursus", "Experience", "Skills", "Projects"] };
-	    };
-	    Resume.prototype.getInitialState = function () {
-	        return { currentTab: "Cursus" };
-	    };
-	    Resume.prototype.handleOnClickTab = function (tabName) {
-	        this.setState({ currentTab: tabName });
+	    Resume.prototype.handleOnTabClick = function (tabName) {
+	        this.state.currentTab = tabName;
 	    };
 	    Resume.prototype.render = function () {
+	        var currentTabStyle = {
+	            color: "white",
+	            background: "black"
+	        };
+	        var tabs;
+	        tabs = [];
+	        for (var tab in this.state.tabs) {
+	            if (this.state.tabs[tab] === this.state.currentTab) {
+	                tabs.push(React.createElement(react_router_1.Link, {to: "/Resume/" + this.state.tabs[tab]}, 
+	                    React.createElement("th", {style: currentTabStyle}, this.state.tabs[tab])
+	                ));
+	            }
+	            else {
+	                tabs.push(React.createElement(react_router_1.Link, {onClick: this.handleOnTabClick.bind(this, this.state.tabs[tab]), to: "/Resume/" + this.state.tabs[tab]}, 
+	                    React.createElement("th", null, this.state.tabs[tab])
+	                ));
+	            }
+	        }
+	        console.log(tabs);
 	        return (React.createElement("div", {className: "app"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume"}, 
+	            React.createElement(react_router_1.Link, {to: "/Resume", onClick: this.handleOnTabClick.bind(this, "Cursus")}, 
 	                React.createElement("h1", null, "Resume")
 	            ), 
-	            React.createElement("div", {class: "menu"}, 
-	                React.createElement("table", null, 
-	                    React.createElement("tr", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, 
-	                            React.createElement("th", null, "Cursus")
-	                        ), 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
-	                            React.createElement("th", null, "Experience")
-	                        ), 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, 
-	                            React.createElement("th", null, "Skills")
-	                        ), 
-	                        React.createElement(react_router_1.Link, {to: "/Resume/Projects"}, 
-	                            React.createElement("th", null, "Projects")
-	                        ))
-	                )
-	            ), 
-	            React.createElement("main", null, this.props.children)));
+	            React.createElement("table", null, 
+	                React.createElement("tr", null, tabs), 
+	                React.createElement("tr", null, 
+	                    React.createElement("main", null, this.props.children)
+	                ))));
 	    };
 	    return Resume;
 	}(React.Component));
