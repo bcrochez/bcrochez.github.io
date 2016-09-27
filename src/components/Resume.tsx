@@ -20,19 +20,14 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
   }
 
   render() {
-    var currentTabStyle = {
-      color : "white",
-      background : "black"
-    };
-
     var tabs : JSX.Element[]
     tabs = [];
     
     for(var tab in this.state.tabs) {
       if(this.state.tabs[tab] === this.state.currentTab) {
-        tabs.push( <Link to={"/Resume/"+this.state.tabs[tab]}><th style={currentTabStyle}>{this.state.tabs[tab]}</th></Link> );
+        tabs.push( <Link to={"/Resume/"+this.state.tabs[tab]}><th className="selected-tab">{this.state.tabs[tab]}</th></Link> );
       } else {
-        tabs.push( <Link onClick={this.handleOnTabClick.bind(this, this.state.tabs[tab])} to={"/Resume/"+this.state.tabs[tab]}><th>{this.state.tabs[tab]}</th></Link> );
+        tabs.push( <Link onClick={this.handleOnTabClick.bind(this, this.state.tabs[tab])} to={"/Resume/"+this.state.tabs[tab]}><th className="resume-tab">{this.state.tabs[tab]}</th></Link> );
       }
     }
 

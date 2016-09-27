@@ -5939,20 +5939,14 @@
 	        return (React.createElement("div", {className: "home"}, 
 	            React.createElement("table", null, 
 	                React.createElement("tr", null, 
-	                    React.createElement("th", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Welcome"}, 
-	                            React.createElement("h1", null, "Index")
-	                        )
+	                    React.createElement(react_router_1.Link, {to: "/Welcome"}, 
+	                        React.createElement("th", {className: "home-tab"}, "Index")
 	                    ), 
-	                    React.createElement("th", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Resume"}, 
-	                            React.createElement("h1", null, "Resume")
-	                        )
+	                    React.createElement(react_router_1.Link, {to: "/Resume"}, 
+	                        React.createElement("th", {className: "home-tab"}, "Resume")
 	                    ), 
-	                    React.createElement("th", null, 
-	                        React.createElement(react_router_1.Link, {to: "/Projects"}, 
-	                            React.createElement("h1", null, "Projects")
-	                        )
+	                    React.createElement(react_router_1.Link, {to: "/Projects"}, 
+	                        React.createElement("th", {className: "home-tab"}, "Projects")
 	                    ))
 	            ), 
 	            React.createElement("main", null, this.props.children)));
@@ -6008,21 +6002,17 @@
 	        this.state.currentTab = tabName;
 	    };
 	    Resume.prototype.render = function () {
-	        var currentTabStyle = {
-	            color: "white",
-	            background: "black"
-	        };
 	        var tabs;
 	        tabs = [];
 	        for (var tab in this.state.tabs) {
 	            if (this.state.tabs[tab] === this.state.currentTab) {
 	                tabs.push(React.createElement(react_router_1.Link, {to: "/Resume/" + this.state.tabs[tab]}, 
-	                    React.createElement("th", {style: currentTabStyle}, this.state.tabs[tab])
+	                    React.createElement("th", {className: "selected-tab"}, this.state.tabs[tab])
 	                ));
 	            }
 	            else {
 	                tabs.push(React.createElement(react_router_1.Link, {onClick: this.handleOnTabClick.bind(this, this.state.tabs[tab]), to: "/Resume/" + this.state.tabs[tab]}, 
-	                    React.createElement("th", null, this.state.tabs[tab])
+	                    React.createElement("th", {className: "resume-tab"}, this.state.tabs[tab])
 	                ));
 	            }
 	        }

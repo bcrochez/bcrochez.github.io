@@ -12,9 +12,9 @@ export class Home extends React.Component<HomeProps, HomeState> {
       <div className="home">
         <table>
           <tr>
-            <th><Link to="/Welcome"><h1>Index</h1></Link></th>
-            <th><Link to="/Resume"><h1>Resume</h1></Link></th>
-            <th><Link to="/Projects"><h1>Projects</h1></Link></th>
+            <Link to="/Welcome"><th className="home-tab">Index</th></Link>
+            <Link to="/Resume"><th className="home-tab">Resume</th></Link>
+            <Link to="/Projects"><th className="home-tab">Projects</th></Link>
           </tr>
         </table>
         <main>

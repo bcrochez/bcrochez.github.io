@@ -13,7 +13,7 @@ a {
   color: #1e6bb8;
   text-decoration: none; }
   a:hover {
-    text-decoration: underline; }
+    text-decoration: none; }
 
 .btn {
   display: inline-block;
@@ -182,10 +182,11 @@ a {
   word-break: normal;
   word-break: keep-all; }
   .main-content table th {
-    font-weight: bold; }
+    font-weight: bold;
+    border-radius: 10px; }
   .main-content table th, .main-content table td {
     padding: 0.5rem 1rem;
-    border: 1px solid #e9ebec; }
+    border: 0px solid #e9ebec; }
 .main-content dl {
   padding: 0; }
   .main-content dl dt {
@@ -202,6 +203,33 @@ a {
   margin: 1rem 0;
   background-color: #eff0f1;
   border: 0; }
+
+.selected-tab {
+  color : white;
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+.resume-tab {
+  color : #155799;
+}
+
+.resume-tab:hover {
+  color : white;
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+.home-tab {
+  color : #159957;
+  font-size: xx-large;
+  font-weight: normal;
+}
+
+.home-tab:hover {
+  color : white;
+  background-color: #159957;
+}
 
 @media screen and (min-width: 64em) {
   .main-content {
