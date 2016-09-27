@@ -11,7 +11,7 @@ import { SkillList } from "./components/SkillList";
 import { ProjectList } from "./components/ProjectList";
 
 ReactDOM.render((
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
         <Route path="/" component={Home} >
 
             <IndexRoute component={Welcome} />
@@ -28,7 +28,7 @@ ReactDOM.render((
             </Route>
 
             <Route path="/Projects" component={ProjectList} />
-
+            
         </Route>
     </Router>
     ), document.getElementById("main")
