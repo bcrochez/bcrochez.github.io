@@ -10,8 +10,8 @@ export class SkillList extends React.Component<SkillListProps, SkillListState> {
   render() {
     return (
       <div className="skills">
-        <Link to="/Resume/Skills"><h3>Skills</h3></Link>
-        My skills
+        <h3>My skills</h3>
+        Coming soon...
       </div>
     );
   }

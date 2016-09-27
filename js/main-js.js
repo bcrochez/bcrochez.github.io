@@ -49,19 +49,23 @@
 	var ReactDOM = __webpack_require__(2);
 	var react_router_1 = __webpack_require__(3);
 	var Home_1 = __webpack_require__(67);
-	var Resume_1 = __webpack_require__(68);
-	var CursusList_1 = __webpack_require__(69);
-	var ExperienceList_1 = __webpack_require__(70);
-	var SkillList_1 = __webpack_require__(71);
-	var ProjectList_1 = __webpack_require__(72);
+	var Welcome_1 = __webpack_require__(68);
+	var Resume_1 = __webpack_require__(69);
+	var CursusList_1 = __webpack_require__(70);
+	var ExperienceList_1 = __webpack_require__(71);
+	var SkillList_1 = __webpack_require__(72);
+	var ProjectList_1 = __webpack_require__(73);
 	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
-	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}), 
-	    React.createElement(react_router_1.Route, {path: "/Resume", component: Resume_1.Resume}, 
-	        React.createElement(react_router_1.IndexRoute, {component: CursusList_1.CursusList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Cursus", component: CursusList_1.CursusList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList}), 
-	        React.createElement(react_router_1.Route, {path: "/Resume/Projects", component: ProjectList_1.ProjectList})))), document.getElementById("main"));
+	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}, 
+	        React.createElement(react_router_1.IndexRoute, {component: Welcome_1.Welcome}), 
+	        React.createElement(react_router_1.Route, {path: "/Welcome", component: Welcome_1.Welcome}), 
+	        React.createElement(react_router_1.Route, {path: "/Resume", component: Resume_1.Resume}, 
+	            React.createElement(react_router_1.IndexRoute, {component: CursusList_1.CursusList}), 
+	            React.createElement(react_router_1.Route, {path: "/Resume/Cursus", component: CursusList_1.CursusList}), 
+	            React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
+	            React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList})), 
+	        React.createElement(react_router_1.Route, {path: "/Projects", component: ProjectList_1.ProjectList}))
+	)), document.getElementById("main"));
 
 
 /***/ },
@@ -5933,10 +5937,25 @@
 	    }
 	    Home.prototype.render = function () {
 	        return (React.createElement("div", {className: "home"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume"}, 
-	                React.createElement("h2", null, "Resume")
-	            )
-	        ));
+	            React.createElement("table", null, 
+	                React.createElement("tr", null, 
+	                    React.createElement("th", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Welcome"}, 
+	                            React.createElement("h1", null, "Index")
+	                        )
+	                    ), 
+	                    React.createElement("th", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Resume"}, 
+	                            React.createElement("h1", null, "Resume")
+	                        )
+	                    ), 
+	                    React.createElement("th", null, 
+	                        React.createElement(react_router_1.Link, {to: "/Projects"}, 
+	                            React.createElement("h1", null, "Projects")
+	                        )
+	                    ))
+	            ), 
+	            React.createElement("main", null, this.props.children)));
 	    };
 	    return Home;
 	}(React.Component));
@@ -5954,12 +5973,36 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
+	var Welcome = (function (_super) {
+	    __extends(Welcome, _super);
+	    function Welcome() {
+	        _super.apply(this, arguments);
+	    }
+	    Welcome.prototype.render = function () {
+	        return (React.createElement("div", {className: "welcome"}, "Welcome to my website !"));
+	    };
+	    return Welcome;
+	}(React.Component));
+	exports.Welcome = Welcome;
+
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
 	var react_router_1 = __webpack_require__(3);
 	var Resume = (function (_super) {
 	    __extends(Resume, _super);
 	    function Resume(props, context) {
 	        _super.call(this, props, context);
-	        this.state = { currentTab: "Cursus", tabs: ["Cursus", "Experience", "Skills", "Projects"] };
+	        this.state = { currentTab: "Cursus", tabs: ["Cursus", "Experience", "Skills"] };
 	    }
 	    Resume.prototype.handleOnTabClick = function (tabName) {
 	        this.state.currentTab = tabName;
@@ -5986,12 +6029,14 @@
 	        console.log(tabs);
 	        return (React.createElement("div", {className: "app"}, 
 	            React.createElement(react_router_1.Link, {to: "/Resume", onClick: this.handleOnTabClick.bind(this, "Cursus")}, 
-	                React.createElement("h1", null, "Resume")
+	                React.createElement("h2", null, "Resume")
 	            ), 
 	            React.createElement("table", null, 
 	                React.createElement("tr", null, tabs), 
 	                React.createElement("tr", null, 
-	                    React.createElement("main", null, this.props.children)
+	                    React.createElement("td", null, 
+	                        React.createElement("main", null, this.props.children)
+	                    )
 	                ))));
 	    };
 	    return Resume;
@@ -6000,7 +6045,7 @@
 
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6010,7 +6055,6 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var react_router_1 = __webpack_require__(3);
 	var CursusList = (function (_super) {
 	    __extends(CursusList, _super);
 	    function CursusList() {
@@ -6018,9 +6062,7 @@
 	    }
 	    CursusList.prototype.render = function () {
 	        return (React.createElement("div", {className: "cursus"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume/Cursus"}, 
-	                React.createElement("h3", null, "Cursus")
-	            ), 
+	            React.createElement("h3", null, "My cursus"), 
 	            React.createElement("ul", null, 
 	                React.createElement("li", null, 
 	                    "2016 - ", 
@@ -6044,7 +6086,7 @@
 
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6054,7 +6096,6 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var react_router_1 = __webpack_require__(3);
 	var ExperienceList = (function (_super) {
 	    __extends(ExperienceList, _super);
 	    function ExperienceList() {
@@ -6062,9 +6103,7 @@
 	    }
 	    ExperienceList.prototype.render = function () {
 	        return (React.createElement("div", {className: "experience"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume/Experience"}, 
-	                React.createElement("h3", null, "Experience")
-	            ), 
+	            React.createElement("h3", null, "My experience"), 
 	            React.createElement("ul", null, 
 	                React.createElement("li", null, 
 	                    "2016 - Internship in the Laboratoire d'Informatique Gaspard Monge (LIGM) - Probabilist real-time system scheduling ", 
@@ -6083,35 +6122,6 @@
 
 
 /***/ },
-/* 71 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(1);
-	var react_router_1 = __webpack_require__(3);
-	var SkillList = (function (_super) {
-	    __extends(SkillList, _super);
-	    function SkillList() {
-	        _super.apply(this, arguments);
-	    }
-	    SkillList.prototype.render = function () {
-	        return (React.createElement("div", {className: "skills"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume/Skills"}, 
-	                React.createElement("h3", null, "Skills")
-	            ), 
-	            "My skills"));
-	    };
-	    return SkillList;
-	}(React.Component));
-	exports.SkillList = SkillList;
-
-
-/***/ },
 /* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -6122,7 +6132,32 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var react_router_1 = __webpack_require__(3);
+	var SkillList = (function (_super) {
+	    __extends(SkillList, _super);
+	    function SkillList() {
+	        _super.apply(this, arguments);
+	    }
+	    SkillList.prototype.render = function () {
+	        return (React.createElement("div", {className: "skills"}, 
+	            React.createElement("h3", null, "My skills"), 
+	            "Coming soon..."));
+	    };
+	    return SkillList;
+	}(React.Component));
+	exports.SkillList = SkillList;
+
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
 	var ProjectList = (function (_super) {
 	    __extends(ProjectList, _super);
 	    function ProjectList() {
@@ -6130,10 +6165,12 @@
 	    }
 	    ProjectList.prototype.render = function () {
 	        return (React.createElement("div", {className: "projects"}, 
-	            React.createElement(react_router_1.Link, {to: "/Resume/Projects"}, 
-	                React.createElement("h3", null, "Projects")
-	            ), 
-	            "My projects"));
+	            React.createElement("h2", null, "Projects"), 
+	            React.createElement("ul", null, 
+	                React.createElement("li", null, 
+	                    React.createElement("a", {href: "./javascript-samples"}, "Some JavaScript samples")
+	                ), 
+	                React.createElement("li", null, "Coming soon..."))));
 	    };
 	    return ProjectList;
 	}(React.Component));

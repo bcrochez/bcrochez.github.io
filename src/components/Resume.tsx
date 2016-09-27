@@ -12,7 +12,7 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 
   constructor(props : ResumeProps, context : any) {
     super(props, context);
-    this.state = { currentTab : "Cursus", tabs : ["Cursus", "Experience", "Skills", "Projects"] };
+    this.state = { currentTab : "Cursus", tabs : ["Cursus", "Experience", "Skills"] };
   }
 
   handleOnTabClick(tabName : string) {
@@ -40,15 +40,17 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 
     return (
       <div className="app">
-        <Link to="/Resume" onClick={this.handleOnTabClick.bind(this, "Cursus")}><h1>Resume</h1></Link>
+        <Link to="/Resume" onClick={this.handleOnTabClick.bind(this, "Cursus")}><h2>Resume</h2></Link>
         <table>
           <tr>
             {tabs}
           </tr>
           <tr>
-            <main>
-              {this.props.children}
-            </main>
+            <td>
+              <main>
+                {this.props.children}
+              </main>
+            </td>
           </tr>
         </table>
       </div>

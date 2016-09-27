@@ -10,8 +10,11 @@ export class ProjectList extends React.Component<ProjectListProps, ProjectListSt
   render() {
     return (
       <div className="projects">
-        <Link to="/Resume/Projects"><h3>Projects</h3></Link>
-        My projects
+        <h2>Projects</h2>
+        <ul>
+          <li><a href="./javascript-samples">Some JavaScript samples</a></li>
+          <li>Coming soon...</li>
+        </ul>
       </div>
     );
   }
