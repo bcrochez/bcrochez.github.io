@@ -9,6 +9,7 @@ import { CursusList } from "./components/CursusList";
 import { ExperienceList } from "./components/ExperienceList";
 import { SkillList } from "./components/SkillList";
 import { ProjectList } from "./components/ProjectList";
+import { Contact } from "./components/Contact";
 
 ReactDOM.render((
     <Router history={hashHistory}>
@@ -28,6 +29,7 @@ ReactDOM.render((
             </Route>
 
             <Route path="/Projects" component={ProjectList} />
+            <Route path="/Contact" component={Contact} />
             
         </Route>
     </Router>

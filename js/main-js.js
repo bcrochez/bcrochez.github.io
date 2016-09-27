@@ -55,6 +55,7 @@
 	var ExperienceList_1 = __webpack_require__(71);
 	var SkillList_1 = __webpack_require__(72);
 	var ProjectList_1 = __webpack_require__(73);
+	var Contact_1 = __webpack_require__(74);
 	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, 
 	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}, 
 	        React.createElement(react_router_1.IndexRoute, {component: Welcome_1.Welcome}), 
@@ -64,7 +65,8 @@
 	            React.createElement(react_router_1.Route, {path: "/Resume/Cursus", component: CursusList_1.CursusList}), 
 	            React.createElement(react_router_1.Route, {path: "/Resume/Experience", component: ExperienceList_1.ExperienceList}), 
 	            React.createElement(react_router_1.Route, {path: "/Resume/Skills", component: SkillList_1.SkillList})), 
-	        React.createElement(react_router_1.Route, {path: "/Projects", component: ProjectList_1.ProjectList}))
+	        React.createElement(react_router_1.Route, {path: "/Projects", component: ProjectList_1.ProjectList}), 
+	        React.createElement(react_router_1.Route, {path: "/Contact", component: Contact_1.Contact}))
 	)), document.getElementById("main"));
 
 
@@ -5947,6 +5949,9 @@
 	                    ), 
 	                    React.createElement(react_router_1.Link, {to: "/Projects"}, 
 	                        React.createElement("th", {className: "home-tab"}, "Projects")
+	                    ), 
+	                    React.createElement(react_router_1.Link, {to: "/Contact"}, 
+	                        React.createElement("th", {className: "home-tab"}, "Contact")
 	                    ))
 	            ), 
 	            React.createElement("main", null, this.props.children)));
@@ -6165,6 +6170,40 @@
 	    return ProjectList;
 	}(React.Component));
 	exports.ProjectList = ProjectList;
+
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var Contact = (function (_super) {
+	    __extends(Contact, _super);
+	    function Contact() {
+	        _super.apply(this, arguments);
+	    }
+	    Contact.prototype.render = function () {
+	        return (React.createElement("div", {className: "contact"}, 
+	            React.createElement("h2", null, "Contact"), 
+	            React.createElement("p", null, 
+	                React.createElement("a", {href: "mailto:bastien.crochez@gmail.com"}, "Send me a mail")
+	            ), 
+	            React.createElement("p", null, 
+	                React.createElement("a", {href: "https://www.linkedin.com/in/bastien-crochez-6a1b56109"}, "My Linkedin page")
+	            ), 
+	            React.createElement("p", null, 
+	                React.createElement("a", {href: "https://github.com/bcrochez"}, "My Github page")
+	            )));
+	    };
+	    return Contact;
+	}(React.Component));
+	exports.Contact = Contact;
 
 
 /***/ }
