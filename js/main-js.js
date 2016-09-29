@@ -6134,18 +6134,18 @@
 	    function SkillList(props, context) {
 	        _super.call(this, props, context);
 	        this.state = { skills: [
-	                { name: 'Android', rating: 3 },
-	                { name: 'C', rating: 4 },
-	                { name: 'C++', rating: 3 },
-	                { name: 'HTML5/CSS3', rating: 4 },
-	                { name: 'Java', rating: 5 },
-	                { name: 'JavaScript', rating: 4 },
-	                { name: 'JEE', rating: 3 },
-	                { name: 'MySQL', rating: 3 },
-	                { name: 'OCaml', rating: 2 },
-	                { name: 'PHP', rating: 3 },
-	                { name: 'Python', rating: 5 },
-	                { name: 'TypeScript & React', rating: 2 },
+	                { name: 'Android', rating: "3" },
+	                { name: 'C', rating: "4" },
+	                { name: 'C++', rating: "3" },
+	                { name: 'HTML5/CSS3', rating: "4" },
+	                { name: 'Java', rating: "5" },
+	                { name: 'JavaScript', rating: "4" },
+	                { name: 'JEE', rating: "3" },
+	                { name: 'MySQL', rating: "3" },
+	                { name: 'OCaml', rating: "2" },
+	                { name: 'PHP', rating: "3" },
+	                { name: 'Python', rating: "5" },
+	                { name: 'TypeScript & React', rating: "2" },
 	            ] };
 	    }
 	    SkillList.prototype.render = function () {
@@ -6181,7 +6181,7 @@
 	        return (React.createElement("tr", null, 
 	            React.createElement("td", null, this.props.name), 
 	            React.createElement("td", null, 
-	                React.createElement("progress", {value: this.props.rating.toString(), max: "5"})
+	                React.createElement("progress", {value: this.props.rating, max: "5"})
 	            )));
 	    };
 	    return Skill;

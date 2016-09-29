@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export interface SkillProps {
     name: string;
-    rating: number;
+    rating: string;
  }
 
 export interface SkillState { }
@@ -21,7 +21,7 @@ export class Skill extends React.Component<SkillProps, SkillState> {
                 {this.props.name}
             </td>
             <td>
-                <progress value={this.props.rating.toString()} max="5" />
+                <progress value={this.props.rating} max="5" />
             </td>
         </tr>
     );
