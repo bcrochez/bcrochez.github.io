@@ -21,7 +21,7 @@ export class Skill extends React.Component<SkillProps, SkillState> {
                 {this.props.name}
             </td>
             <td>
-                <progress value={this.props.rating} max="5" />
+                <progress max="5" value={this.props.rating} />
             </td>
         </tr>
     );

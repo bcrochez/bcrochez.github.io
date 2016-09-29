@@ -6181,7 +6181,7 @@
 	        return (React.createElement("tr", null, 
 	            React.createElement("td", null, this.props.name), 
 	            React.createElement("td", null, 
-	                React.createElement("progress", {value: this.props.rating, max: "5"})
+	                React.createElement("progress", {max: "5", value: this.props.rating})
 	            )));
 	    };
 	    return Skill;
