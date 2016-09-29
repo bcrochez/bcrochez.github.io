@@ -10,7 +10,9 @@ export class Welcome extends React.Component<WelcomeProps, WelcomeState> {
   render() {
     return (
       <div className="welcome">
-        Welcome to my website !
+        <p>
+          Welcome to my website !
+        </p>
       </div>
     );
   }

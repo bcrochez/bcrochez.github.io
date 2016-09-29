@@ -31,8 +31,6 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
       }
     }
 
-    console.log(tabs);
-
     return (
       <div className="app">
         <Link to="/Resume" onClick={this.handleOnTabClick.bind(this, "Cursus")}><h2>Resume</h2></Link>

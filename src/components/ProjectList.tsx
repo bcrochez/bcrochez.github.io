@@ -13,7 +13,7 @@ export class ProjectList extends React.Component<ProjectListProps, ProjectListSt
         <h2>Projects</h2>
         <ul>
           <li><a href="./javascript-samples">Some JavaScript samples</a></li>
-          <li>Coming soon...</li>
+          <li>More coming soon...</li>
         </ul>
       </div>
     );

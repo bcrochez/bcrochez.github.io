@@ -231,6 +231,107 @@ a {
   background-color: #159957;
 }
 
+/* IE & global */
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Get rid of default border in Firefox. */
+  border: none;
+}
+
+progress[value="5"] {
+  color : green;
+}
+
+progress[value="4"] {
+  color: yellowgreen;
+}
+
+progress[value="3"] {
+  color: orange;
+}
+
+progress[value="2"] {
+  color: orangered;
+}
+
+progress[value="1"] {
+  color: red;
+}
+
+/* CHROME */
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: 
+    -webkit-linear-gradient(
+      top, 
+    rgba(255, 255, 255, 0.25), 
+    rgba(0, 0, 0, 0.25)
+  );
+  border-radius: 2px;
+}
+
+progress[value="5"]::-webkit-progress-value {
+  background-color: green;
+}
+
+progress[value="4"]::-webkit-progress-value {
+  background-color: yellowgreen;
+}
+
+progress[value="3"]::-webkit-progress-value {
+  background-color: orange;
+}
+
+progress[value="2"]::-webkit-progress-value {
+  background-color: orangered;
+}
+
+progress[value="1"]::-webkit-progress-value {
+  background-color: red;
+}
+
+/* MOZILLA */
+progress[value]::-moz-progress-bar {
+  background-image:
+    -moz-linear-gradient(
+      top, 
+      rgba(255, 255, 255, 0.25), 
+      rgba(0, 0, 0, 0.25)
+    );
+  border-radius: 2px;
+}
+
+progress[value="5"]::-moz-progress-bar {
+  background-color: green;
+}
+
+progress[value="4"]::-moz-progress-bar {
+  background-color: yellowgreen;
+}
+
+progress[value="3"]::-moz-progress-bar {
+  background-color: orange;
+}
+
+progress[value="2"]::-moz-progress-bar {
+  background-color: orangered;
+}
+
+progress[value="1"]::-moz-progress-bar {
+  background-color: red;
+}
+
+/*******************/
+
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;

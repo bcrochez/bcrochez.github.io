@@ -54,8 +54,8 @@
 	var CursusList_1 = __webpack_require__(70);
 	var ExperienceList_1 = __webpack_require__(71);
 	var SkillList_1 = __webpack_require__(72);
-	var ProjectList_1 = __webpack_require__(73);
-	var Contact_1 = __webpack_require__(74);
+	var ProjectList_1 = __webpack_require__(74);
+	var Contact_1 = __webpack_require__(75);
 	ReactDOM.render((React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, 
 	    React.createElement(react_router_1.Route, {path: "/", component: Home_1.Home}, 
 	        React.createElement(react_router_1.IndexRoute, {component: Welcome_1.Welcome}), 
@@ -5978,7 +5978,9 @@
 	        _super.apply(this, arguments);
 	    }
 	    Welcome.prototype.render = function () {
-	        return (React.createElement("div", {className: "welcome"}, "Welcome to my website !"));
+	        return (React.createElement("div", {className: "welcome"}, 
+	            React.createElement("p", null, "Welcome to my website !")
+	        ));
 	    };
 	    return Welcome;
 	}(React.Component));
@@ -6021,7 +6023,6 @@
 	                ));
 	            }
 	        }
-	        console.log(tabs);
 	        return (React.createElement("div", {className: "app"}, 
 	            React.createElement(react_router_1.Link, {to: "/Resume", onClick: this.handleOnTabClick.bind(this, "Cursus")}, 
 	                React.createElement("h2", null, "Resume")
@@ -6127,15 +6128,33 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
+	var Skill_1 = __webpack_require__(73);
 	var SkillList = (function (_super) {
 	    __extends(SkillList, _super);
-	    function SkillList() {
-	        _super.apply(this, arguments);
+	    function SkillList(props, context) {
+	        _super.call(this, props, context);
+	        this.state = { skills: [
+	                { name: 'Android', rating: 3 },
+	                { name: 'C', rating: 4 },
+	                { name: 'C++', rating: 3 },
+	                { name: 'HTML5/CSS3', rating: 4 },
+	                { name: 'Java', rating: 5 },
+	                { name: 'JavaScript', rating: 4 },
+	                { name: 'JEE', rating: 3 },
+	                { name: 'MySQL', rating: 3 },
+	                { name: 'OCaml', rating: 2 },
+	                { name: 'PHP', rating: 3 },
+	                { name: 'Python', rating: 5 },
+	                { name: 'TypeScript & React', rating: 2 },
+	            ] };
 	    }
 	    SkillList.prototype.render = function () {
+	        var skills = this.state.skills.map(function (skill) {
+	            return (React.createElement(Skill_1.Skill, {name: skill.name, rating: skill.rating}));
+	        });
 	        return (React.createElement("div", {className: "skills"}, 
 	            React.createElement("h3", null, "My skills"), 
-	            "Coming soon..."));
+	            React.createElement("table", null, skills)));
 	    };
 	    return SkillList;
 	}(React.Component));
@@ -6144,6 +6163,34 @@
 
 /***/ },
 /* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var Skill = (function (_super) {
+	    __extends(Skill, _super);
+	    function Skill(props, context) {
+	        _super.call(this, props, context);
+	    }
+	    Skill.prototype.render = function () {
+	        return (React.createElement("tr", null, 
+	            React.createElement("td", null, this.props.name), 
+	            React.createElement("td", null, 
+	                React.createElement("progress", {value: this.props.rating.toString(), max: "5"})
+	            )));
+	    };
+	    return Skill;
+	}(React.Component));
+	exports.Skill = Skill;
+
+
+/***/ },
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6165,7 +6212,7 @@
 	                React.createElement("li", null, 
 	                    React.createElement("a", {href: "./javascript-samples"}, "Some JavaScript samples")
 	                ), 
-	                React.createElement("li", null, "Coming soon..."))));
+	                React.createElement("li", null, "More coming soon..."))));
 	    };
 	    return ProjectList;
 	}(React.Component));
@@ -6173,7 +6220,7 @@
 
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
