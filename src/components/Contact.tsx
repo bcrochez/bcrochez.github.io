@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router";
 
 export interface ContactProps { }
 
@@ -18,7 +17,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
             <a href="https://www.linkedin.com/in/bastien-crochez-6a1b56109">My Linkedin page</a>
         </p>
         <p>
-            <a href="https://github.com/bcrochez">My Github page</a>
+            <a href="https://github.com/bcrochez">My GitHub page</a>
         </p>
       </div>
     );

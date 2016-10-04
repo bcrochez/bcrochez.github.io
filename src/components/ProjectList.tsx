@@ -10,11 +10,22 @@ export class ProjectList extends React.Component<ProjectListProps, ProjectListSt
   render() {
     return (
       <div className="projects">
-        <h2>Projects</h2>
+        <h2>School projects</h2>
         <ul>
-          <li><a href="./javascript-samples">Some JavaScript samples</a></li>
-          <li>More coming soon...</li>
+          <li>Scrabble solver</li>
+          <li>Journal application</li>
+          <li>Travelling salesman problem</li>
+          <li>Application for distribued computing</li>
         </ul>
+
+        <h2>Personal projects</h2>
+        <ul>
+          <li>IRC bot</li>
+          <li>My website</li>
+          <li><a href="./javascript-samples">Some JavaScript samples</a></li>
+        </ul>
+
+        <h3><a href="https://github.com/bcrochez">More on GitHub</a></h3>
       </div>
     );
   }

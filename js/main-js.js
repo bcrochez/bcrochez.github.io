@@ -6207,12 +6207,22 @@
 	    }
 	    ProjectList.prototype.render = function () {
 	        return (React.createElement("div", {className: "projects"}, 
-	            React.createElement("h2", null, "Projects"), 
+	            React.createElement("h2", null, "School projects"), 
 	            React.createElement("ul", null, 
+	                React.createElement("li", null, "Scrabble solver"), 
+	                React.createElement("li", null, "Journal application"), 
+	                React.createElement("li", null, "Travelling salesman problem"), 
+	                React.createElement("li", null, "Application for distribued computing")), 
+	            React.createElement("h2", null, "Personal projects"), 
+	            React.createElement("ul", null, 
+	                React.createElement("li", null, "IRC bot"), 
+	                React.createElement("li", null, "My website"), 
 	                React.createElement("li", null, 
 	                    React.createElement("a", {href: "./javascript-samples"}, "Some JavaScript samples")
-	                ), 
-	                React.createElement("li", null, "More coming soon..."))));
+	                )), 
+	            React.createElement("h3", null, 
+	                React.createElement("a", {href: "https://github.com/bcrochez"}, "More on GitHub")
+	            )));
 	    };
 	    return ProjectList;
 	}(React.Component));
@@ -6245,7 +6255,7 @@
 	                React.createElement("a", {href: "https://www.linkedin.com/in/bastien-crochez-6a1b56109"}, "My Linkedin page")
 	            ), 
 	            React.createElement("p", null, 
-	                React.createElement("a", {href: "https://github.com/bcrochez"}, "My Github page")
+	                React.createElement("a", {href: "https://github.com/bcrochez"}, "My GitHub page")
 	            )));
 	    };
 	    return Contact;
