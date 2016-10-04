@@ -20,7 +20,7 @@ export class ProjectList extends React.Component<ProjectListProps, ProjectListSt
 
         <h2>Personal projects</h2>
         <ul>
-          <li>IRC bot</li>
+          <li><a href="./irc-bot">IRC bot</a></li>
           <li>My website</li>
           <li><a href="./javascript-samples">Some JavaScript samples</a></li>
         </ul>

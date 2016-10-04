@@ -6217,7 +6217,9 @@
 	                React.createElement("li", null, "Application for distribued computing")), 
 	            React.createElement("h2", null, "Personal projects"), 
 	            React.createElement("ul", null, 
-	                React.createElement("li", null, "IRC bot"), 
+	                React.createElement("li", null, 
+	                    React.createElement("a", {href: "./irc-bot"}, "IRC bot")
+	                ), 
 	                React.createElement("li", null, "My website"), 
 	                React.createElement("li", null, 
 	                    React.createElement("a", {href: "./javascript-samples"}, "Some JavaScript samples")
