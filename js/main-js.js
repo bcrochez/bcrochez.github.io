@@ -6209,7 +6209,9 @@
 	        return (React.createElement("div", {className: "projects"}, 
 	            React.createElement("h2", null, "School projects"), 
 	            React.createElement("ul", null, 
-	                React.createElement("li", null, "Scrabble solver"), 
+	                React.createElement("li", null, 
+	                    React.createElement("a", {href: "./scrabble-solver"}, "Scrabble solver")
+	                ), 
 	                React.createElement("li", null, "Journal application"), 
 	                React.createElement("li", null, "Travelling salesman problem"), 
 	                React.createElement("li", null, "Application for distribued computing")), 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scrabble Solver - Bastien Crochez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Scrabble Solver</h1>
+      <h2 class="project-tagline"><a class="btn" href="../#/Projects">Home</a></h2>
+    </section>
+    <section class="main-content">
+      <h2>Scrabble solver</h2>
+      <p>
+        During my last year in Licence I implemented a <a href="https://github.com/bcrochez/Scrabble-solver">Scrabble solver</a> in Python.
+        I implemented the <a href="http://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf">World's Fastest Scrabble algorithm</a>.
+        This algorithm find the best word according to the letters on the board game and in the player's hand.
+      </p>
+      <p>
+        First I needed to build a trie with all the possible words.
+        Then the algorithm go through this trie using the letters in hand and already on the board game to find the word wich cost the most point.
+      </p>
+      <p>
+        This application is developped in Python 3.
+        I implemented an user interface with the Tkinter library.
+        You can find the source code on <a href="https://github.com/bcrochez/Scrabble-solver">my GitHub repository</a>.
+      </p>
+      <footer class="site-footer">
+        <span class="site-footer-credits">Bastien Crochez - 2016 - Using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+    </section>
+  </body>
+</html>

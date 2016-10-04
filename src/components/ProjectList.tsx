@@ -12,7 +12,7 @@ export class ProjectList extends React.Component<ProjectListProps, ProjectListSt
       <div className="projects">
         <h2>School projects</h2>
         <ul>
-          <li>Scrabble solver</li>
+          <li><a href="./scrabble-solver">Scrabble solver</a></li>
           <li>Journal application</li>
           <li>Travelling salesman problem</li>
           <li>Application for distribued computing</li>
